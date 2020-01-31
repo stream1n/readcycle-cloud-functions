@@ -4,7 +4,7 @@ steps:
   - functions
   - deploy
   - newUser
-  - --source=./new-user
+  - --source=./new-user/.
   - --trigger-event=providers/cloud.firestore/eventTypes/document.create
   - --trigger-resource=userLocations/{user}
   - --runtime=nodejs8

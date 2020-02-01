@@ -15,7 +15,7 @@ steps:
   'deploy',
   'updateUser',
   '--source=./update-user/.',
-  '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
+  '--trigger-event=providers/cloud.firestore/eventTypes/document.update',
   '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
   '--runtime=nodejs8']
 
@@ -25,6 +25,6 @@ steps:
   'deploy',
   'deleteUser',
   '--source=./delete-user/.',
-  '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
+  '--trigger-event=providers/cloud.firestore/eventTypes/document.delete',
   '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
   '--runtime=nodejs8']

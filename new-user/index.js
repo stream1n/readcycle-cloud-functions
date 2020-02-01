@@ -7,7 +7,7 @@ exports.newUser = (data, context) => {
   } else {
     
     console.log(context.params.user);
-    var url = 'https://user-matching-service-gqdj5a23xq-ew.a.run.app//match/newUser?user=';
+    var url = 'https://user-matching-service-gqdj5a23xq-ew.a.run.app/match/newUser?user=';
     var fullURL = url.concat(context.params.user);
     request.get(fullURL, function (error, response, body) {
       console.log('error:', error); // Print the error if one occurred 

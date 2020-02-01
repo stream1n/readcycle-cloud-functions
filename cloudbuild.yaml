@@ -18,3 +18,13 @@ steps:
   '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
   '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
   '--runtime=nodejs8']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'deleteUser'
+  args: ['functions',
+  'deploy',
+  'deleteUser',
+  '--source=./delete-user/.',
+  '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
+  '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
+  '--runtime=nodejs8']

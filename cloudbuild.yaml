@@ -1,11 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'newUser'
-  args:
-    ['functions',
-    'deploy',
-    'newUser',
-    '--source=./new-user/.',
-    '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
-    '--trigger-resource=userLocations/{user}',
-    '--runtime=nodejs8']
+  args: ['functions',
+  'deploy',
+  'newUser',
+  '--source=./new-user/.',
+  '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
+  '--trigger-resource=userLocations/{user}',
+  '--runtime=nodejs8']

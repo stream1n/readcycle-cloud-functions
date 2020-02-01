@@ -7,5 +7,5 @@ steps:
     'newUser',
     '--source=./new-user/.',
     '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
-    '--trigger-resource=userLocations/{user}'
+    '--trigger-resource=userLocations/{user}',
     '--runtime=nodejs8']

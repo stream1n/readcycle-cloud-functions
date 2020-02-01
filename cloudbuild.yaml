@@ -8,3 +8,13 @@ steps:
   '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
   '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
   '--runtime=nodejs8']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'updateUser'
+  args: ['functions',
+  'deploy',
+  'updateUser',
+  '--source=./update-user/.',
+  '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
+  '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
+  '--runtime=nodejs8']

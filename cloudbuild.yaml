@@ -31,3 +31,15 @@ steps:
   '--trigger-event=providers/cloud.firestore/eventTypes/document.delete',
   '--trigger-resource=projects/readcycle/databases/default/documents/userLocations/{user}',
   '--runtime=nodejs8']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'newBook'
+  args: ['functions',
+  'deploy',
+  'newBook',
+  '--allow-unauthenticated',
+  '--source=./new-book/.',
+  '--trigger-event=providers/cloud.firestore/eventTypes/document.create',
+  '--trigger-resource=projects/readcycle/databases/default/documents/libraryBooks/{book}',
+  '--runtime=nodejs8']
+
